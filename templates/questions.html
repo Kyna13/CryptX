@@ -1,0 +1,149 @@
+{% extends 'layout.html' %}
+{% block head %}
+    <title>CryptX - Play</title>
+    <!-- BOXICON.css -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- SCSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #verify{
+            color: #00fc0b;
+            margin-bottom: 20px;
+        }
+
+        #submit{
+            border: 0px solid #171717;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #171717;
+        }
+
+        #submit:hover{
+            background-color: #00fc0b;
+            transition: background 600ms;
+        }
+
+        #register_navlink{
+            display: none;
+            padding: 0px;
+        }
+
+        #login_navlink{
+            display: none;
+            padding: 0px;
+        }
+
+        #user_problem{
+            font-weight: 350;
+            color: #ffffff;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            font-size: 27px;
+            line-height: 45px;
+            max-width: 400px;
+            margin-bottom: 50px;
+        }
+
+        #end_text{
+            display: block;
+        }
+
+        #user_level, #end_text{
+            /*font-size: 120px;*/
+            font-size: 60px;
+        }
+
+        #end_text{
+            text-align: center;
+        }
+
+        .input{
+            background-color: #171717;
+        }
+
+        #answer_submit{
+            width: fit-content;
+            float: left;
+            margin-left: 20px;
+        }
+
+        @media (min-width: 320px) and (max-width: 570px) {
+            #user_problem{
+                font-size: 18.5px;
+                max-width: 250px;
+            }
+
+            #user_level, #end_text{
+                /*font-size: 90px;*/
+                font-size: 40px;
+            }
+
+            .input{
+                max-width: 200px;
+            }
+
+            #answer_submit{
+                margin-left: 10px;
+            }
+        }
+
+        #error{
+            position: absolute;
+            bottom: 0px;
+            font-size: 15px;
+        }
+    </style>
+{% endblock %}
+
+{% block questions_leaderboard_link %}
+
+<li class="nav-item">
+    <a class="nav-link" href="{{ url_for('leaderboard', password=password) }}">Leaderboard</a>
+</li>
+
+<li class="nav-item btn">
+    <a class=" rbtn  double-4" href="{{ url_for('questions', password=password) }}"><i class="fas fa-sticky-note"></i>&nbspPLAY</a>
+</li>
+
+{% endblock %}
+
+{% block content %}
+<!-- <div class="container">
+    <h1 id="user_level">“Patience, my friend, patience!"</h1>
+    <p id="user_problem">The questions will appear on this page when the hunt commences on 7th Jan 2022 at 00:00:00.</p>
+</div> -->
+
+<p id="error" class="errors">{{ error }}</p>
+<div class="container">
+    <h1 id="end_text">{{ end_text }}</h1>
+    <h1 id="user_level">Level {{ user_level }}</h1>
+    <p id="user_problem">{{ user_problem }} <span style="display: none;">{{ hidden }}</span></p>
+    <form method="POST" id="register_form">
+        {{ answer_form.hidden_tag() }}
+
+        <p id="verify"><i>"{{ verify }}"</i></p>
+
+        <div class="input" style="width: 400px; float: left;">{{ answer_form.answer(class="input form-control", placeholder="Answer") }}</div>
+
+        <p id="answer_submit">{{ answer_form.submit(class="btn btn-block") }}</p>
+    </form>
+</div>
+<script>
+if (document.getElementById("end_text").innerHTML != ""){
+    document.getElementById("end_text").style.display = "block";
+    document.getElementById("user_level").style.display = "none";
+    document.getElementById("user_problem").style.display = "none";
+    document.getElementById("register_form").style.display = "none";
+    document.getElementById("error").style.display = "none";
+}
+
+if (document.getElementById("error").innerHTML == ""){
+    document.getElementById("error").style.display = "none";
+} else{
+    document.getElementById("error").style.display = "block";
+}
+</script>
+
+<!-- Bootstrap.js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+{% endblock %}

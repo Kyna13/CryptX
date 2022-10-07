@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,700;1,700&display=swap");
+@-webkit-keyframes showTopText {
+  0% {
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes showTopText {
+  0% {
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes showBottomText {
+  0% {
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes showBottomText {
+  0% {
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
+.animated-title {
+  color: #aeaeae;
+  font-family: PT Sans, sans-serif;
+  font-weight: 700;
+  height: 60vmin;
+  left: 50%;
+  position: relative;
+  top: 42%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 90vmin;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.animated-title > div {
+  height: 50%;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+}
+
+.animated-title > div div {
+  padding: 0px 0;
+  position: absolute;
+}
+
+.animated-title > div div span {
+  display: block;
+}
+
+.animated-title > div.text-top {
+  border-bottom: 1vmin solid grey;
+  top: 0;
+}
+
+.animated-title > div.text-top div {
+  -webkit-animation: showTopText 1s;
+          animation: showTopText 1s;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  bottom: 0;
+  -webkit-transform: translate(0, 100%);
+          transform: translate(0, 100%);
+}
+
+.animated-title > div.text-top div span:first-child {
+  color: #e8e8e8;
+}
+
+.animated-title > div.text-bottom {
+  bottom: 0;
+}
+
+.animated-title > div.text-bottom div {
+  -webkit-animation: showBottomText 2s;
+          animation: showBottomText 2s;
+  -webkit-animation-delay: 1.75s;
+          animation-delay: 1.75s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  top: 0;
+  -webkit-transform: translate(0, -100%);
+          transform: translate(0, -100%);
+}
+
+@media (min-width: 1154px) {
+  .animated-title{
+    width: 80%;
+    margin-right: 18%;
+    margin-left: 18%;
+    left: 32%;
+  }
+}
+
+
+@media (min-width: 767px) and (max-width: 1154px) {
+  .animated-title{
+    width: 80%;
+    margin-right: 18%;
+    margin-left: 18%;
+    left: 32%;
+  }
+
+  .text-bottom {
+    font-size: 60px;
+  }
+
+  .text-top {
+    font-size: 100px;
+  }
+  
+}
+
+@media (min-width: 595px) and (max-width: 767px) {
+  .animated-title{
+    width: auto;
+    margin-right: 0%;
+    margin-left: 0%;
+  }
+
+  .text-bottom {
+    font-size: 60px;
+  }
+
+  header{
+    padding-right: 10%;
+    padding-left: 10%;
+  }
+
+  .text-top {
+    font-size: 80px;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 595px) {
+  .animated-title{
+    width: auto;
+    margin-right: 0%;
+    margin-left: 0%;
+  }
+
+  .text-bottom {
+    font-size: 40px;
+  }
+
+  header{
+    padding-right: 10%;
+    padding-left: 10%;
+  }
+
+  .text-top {
+    font-size: 65px;
+  }
+}
+
+@media (max-width: 400px) {
+  .animated-title{
+    width: auto;
+    margin-right: 0%;
+    margin-left: 0%;
+  }
+
+  .text-bottom {
+    font-size: 28px;
+  }
+
+  header{
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+
+  .text-top {
+    font-size: 60px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

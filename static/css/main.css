@@ -1,0 +1,131 @@
+body{
+    background-color: #171717;
+    color: #ffffff;
+}
+
+/* Nav Styling Start */
+
+nav {
+    background-color: #171717;
+  }
+  nav ul li {
+    font-size: 18px;
+    padding: 0 0.8rem;
+  }
+  
+  /* .nav-item a:hover{
+      text-decoration:  overline white;
+      border-bottom: solid 1px white;
+      border-top:solid 1px white
+      transition: all ease-in-out(0.5s);
+  } */
+  
+  a.nav-link {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  #register_navlink{
+   display: block;
+  }
+
+  #login_navlink{
+    display: block;
+  }
+  
+  /* .nav-link::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #fff;
+      transition: width .3s;
+  }
+  
+  .nav-link:hover::after {
+      width: 100%;
+      
+      transition: width .3s;
+  } */
+  
+  .menu {
+    color: black;
+  }
+  
+  .navbar.scrolled {
+    background-color: #171717;
+    opacity: 0.9;
+    transition: background 600ms;
+  }
+  
+  .nav-link {
+    background: linear-gradient(currentColor 0 0) 0 0,
+      linear-gradient(currentColor 0 0) 0 0,
+      linear-gradient(currentColor 0 0) 100% 100%,
+      linear-gradient(currentColor 0 0) 100% 100%,
+      linear-gradient(currentColor 0 0) 0 0%,
+      linear-gradient(currentColor 0 0) 0 0,
+      linear-gradient(currentColor 0 0) 0% 0%,
+      linear-gradient(currentColor 0 0) 0% 0%;
+    background-size: var(--d, 0) 2px, 2px var(--d, 0);
+    background-repeat: no-repeat;
+    transition: 0.4s;
+  }
+  .nav-link:hover {
+    --d: 15px;
+    color: #00fc0b;
+  }
+  
+  .rbtn {
+    border: 3px solid white;
+    text-decoration: None;
+    color: white;
+    padding: 5px 10px;
+    transition: ease-in 0.2s;
+    font-family: "Poppins";
+    margin: 4px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    font-size: 18px;
+  }
+  
+  .rbtn:hover {
+    background-color: #00fc0b;
+  
+    text-decoration: none;
+    color: #171717;
+  }
+
+/* Nav Styling End */
+
+/* Body Styling Start */
+
+.container{
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.errors{
+    display: block;
+    width: 100%;
+    background-color: rgb(252, 156, 156);
+    color: rgb(199, 2, 2);
+    padding: 10px;
+    height: fit-content;
+    margin: 0;
+    border: 2px solid rgb(199, 2, 2);
+    border-radius: 5px;
+}
+
+/* #conformation_button, #conformation_text, #conformation_title{
+    display: none;
+} */
+
+.form_input_label{
+    margin-top: 20px;
+}
+
+/* Body Styling End */

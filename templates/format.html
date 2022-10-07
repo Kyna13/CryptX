@@ -1,0 +1,122 @@
+{% extends 'layout.html' %}
+{% block head %}
+<!-- BOXICON.css -->
+<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+<!-- SCSS -->
+<title>CryptX - Format</title>
+<link rel="stylesheet" href="style.css">
+<style>
+    body{
+        background-color: #171717;
+    }
+
+    i{
+        color:white;
+        font-size: 24px;
+    }
+
+    p{
+        color:white;
+        text-align: center;
+        margin:20px;
+        font-size:40px;
+    }
+
+    ol{
+        padding-left: 40px;
+    }
+
+    .main-section{
+        position: absolute;
+        top: 0px;
+        display: block;
+    }
+</style>
+{% endblock %}
+
+{% block login_register_link %}
+<li class="nav-item" id="login_navlink">
+    <a class="nav-link  double-4" href="{{ url_for('signin') }}">
+        <i class="fas fa-user-secret"></i>&nbspLogin</a>
+</li>
+
+<li class="nav-item" id="register_navlink">
+    <a class="nav-link  double-4" href="{{ url_for('register') }}">
+        <i class="fas fa-user-secret"></i>&nbspRegister</a>
+</li>
+{% endblock %}
+
+{% block questions_leaderboard_link %}
+
+{% if password != "false" %}
+
+<li id="leaderboard_link" style="display: block;" class="nav-item">
+    <a class="nav-link" href="{{ url_for('leaderboard', password=password) }}"><i class="fas fa-sticky-note"></i>&nbspLeaderboard</a>
+</li>
+
+<li id="questions_link" style="display: block;"  class="nav-item btn">
+    <a class=" rbtn  double-4" href="{{ url_for('questions', password=password) }}"><i class="fas fa-sticky-note"></i>&nbspPLAY</a>
+</li>
+
+{% endif %}
+
+{% if password == "false" %}
+
+<li id="leaderboard_link" style="display: none;" class="nav-item">
+    <a class="nav-link" href="#">Leaderboard</a>
+</li>
+
+<li id="questions_link" style="display: none;"  class="nav-item btn">
+    <a class=" rbtn  double-4" href="#"><i class="fas fa-sticky-note"></i>&nbspPLAY</a>
+</li>
+
+{% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+<section class="main-section pt-60" id="main-section">
+    <div class="row justify-content-center">
+            <div class="col-lg-12 col-md-12 col-sm-10 col-12" id="format-container">
+                <div class="box" >
+                      <span class="span">
+                        <p><span>Domain:</span> Open</p>
+                        <p><span>Team(s) Per School:</span> ∞</p>
+                        <p><span>Participant(s) Per Team:</span> 1</p>
+                        <p><span>Event Heads:</span> Yash Mani Gupta and Kyna Rathaur</p>
+                        <p><span>Discord Ids:</span> <a href="https://discordapp.com/users/876053303795019776">TechHuiko#0225</a>, <a href="https://discordapp.com/users/870236280942903309">Kyna#1828</a></p>
+                        </span>
+
+                </div>
+                <div class="box">
+                  <h4 class="pb-40"></h4>
+                        <p><span>Platform:</span><a href="http://cryptx.aztechclub.com/"> Platform</a></p>
+                    <ol>
+                      <li>The hunt will commence on 7 January 2022 at 00:00 and will end on 8 January 2022 at 11:59 <i>(extendable)</i>.</l>
+                      <li>Each Level will be tougher than the preceding one.</li>
+                      <li>Prior registration is required for participation.</li>
+                      <li>All the hints and leads will be confirmed through discord only.</li>
+                      <li>All answers should be entered in lowercase and without spaces.</li>
+                      <li>You can find the resources and tools for the hunt on our discord server.</li>
+                    </ol>
+                </div>
+            </div>
+    </div>
+</section>
+
+<!-- Bootstrap.js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<script>
+
+if (document.getElementById("leaderboard_link").style.display == "block"){
+    document.getElementById("questions_link").style.display = "block";
+    document.getElementById("leaderboard_link").style.display = "block";
+    document.getElementById("login_navlink").style.display = "none";
+    document.getElementById("register_navlink").style.display = "none";
+}
+
+</script>
+
+{% endblock %}

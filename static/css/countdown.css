@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,800;1,500;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap");
+
+ul {
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+#countdown_ul{
+  padding: 0px;
+  justify-content: space-evenly;
+}
+
+#countdown_right{
+  padding-right: 0px;
+}
+
+.countdown {
+  color: #fff;
+  text-align: center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+.count {
+  display: inline-block;
+  font-size: 2em;
+  list-style-type: none;
+  padding-right: 1em;
+  text-transform: uppercase;
+  font-family: "Oswald";
+}
+
+.count span {
+  display: block;
+  font-size: 4.5rem;
+}
+
+
+#days {
+  background-color:#fff;
+  padding: 0 10px;
+  border-radius: 10%;
+  color: #171717;
+  font-family: "Oswald";
+}
+
+#hours {
+  background-color:#fff;
+  padding: 0 10px;
+  border-radius: 10%;
+  color: #171717;
+}
+#minutes {
+  background-color:#fff;
+  padding: 0 10px;
+  border-radius: 10%;
+  color: #171717;
+}
+#seconds {
+  background-color:#fff;
+  padding: 0 10px;
+  border-radius: 10%;
+  color: #171717;
+}
+
+@media (min-width: 595px) and (max-width: 767px) {
+
+  .count {
+    display: inline-block;
+    font-size: 1.5em;
+    list-style-type: none;
+    padding-right: 1em;
+    text-transform: uppercase;
+  }
+
+  .count span {
+    display: block;
+    font-size: 4rem;
+  }
+
+  #days {
+    background-color: white;
+    padding-right: 5px;
+    border-radius: 10%;
+    color: black;
+  }
+
+  #hours {
+    background-color: white;
+    padding-right: 5px;
+    border-radius: 10%;
+    color: black;
+  }
+  #minutes {
+    background-color: white;
+    padding-right: 5px;
+    border-radius: 10%;
+    color: black;
+  }
+  #seconds {
+    background-color: white;
+    padding-right: 5px;
+    border-radius: 10%;
+    color: black;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 595px) {
+  header{
+    padding-right: 10%;
+    padding-left: 10%;
+  }
+
+  .count {
+    display: inline-block;
+    font-size: 1em;
+    list-style-type: none;
+    padding-right: 1em;
+    text-transform: uppercase;
+  }
+
+  .count span {
+    display: block;
+    font-size: 3.2rem;
+  }
+
+  #days {
+    background-color: white;
+    padding-right: 5px;
+    border-radius: 10%;
+    color: black;
+  }
+
+  #hours {
+    background-color: white;
+    padding-right: 5px;
+    border-radius: 10%;
+    color: black;
+  }
+  #minutes {
+    background-color: white;
+    padding-right: 5px;
+    border-radius: 10%;
+    color: black;
+  }
+  #seconds {
+    background-color: white;
+    padding-right: 5px;
+    border-radius: 10%;
+    color: black;
+  }
+}
+
+@media (max-width: 400px) {
+  header{
+    padding-right: 9%;
+    padding-left: 9%;
+  }
+
+  .count {
+    display: inline-block;
+    font-size: 1em;
+    list-style-type: none;
+    padding-right: 1em;
+    text-transform: uppercase;
+  }
+
+  .count span {
+    display: block;
+    font-size: 2rem;
+  }
+
+  #days {
+    background-color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 10%;
+    color: black;
+  }
+
+  #hours {
+    background-color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 10%;
+    color: black;
+  }
+
+  #minutes {
+    background-color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 10%;
+    color: black;
+  }
+  
+  #seconds {
+    background-color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 10%;
+    color: black;
+  }
+}

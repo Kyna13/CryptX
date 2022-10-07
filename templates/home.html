@@ -1,0 +1,110 @@
+{% extends 'layout.html' %}
+{% block head %}
+    <title>CryptX - Home</title>
+    <!-- BOXICON.css -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- SCSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/home_header.css')}}">
+    <!-- Countdown CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/countdown.css')}}">
+    <!-- SCSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/scss/helpers/_position.scss">
+{% endblock %}
+
+                        <!--{% block home_format_link %}
+
+                        <li class="nav-item">
+                            <a class="nav-link active double-4 allslides-6" href="{{ url_for('home', password = password) }}">
+                                <i class="fas fa-home"></i>&nbspHome</a>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a class="nav-link  double-4" href="{{ url_for('format', password = password) }}">
+                                <i class="fas fa-calendar-week"></i>&nbspFormat</a>
+                        </li>
+
+                        {% endblock %}-->
+
+{% block login_register_link %}
+<li class="nav-item" id="login_navlink">
+    <a class="nav-link  double-4" href="{{ url_for('signin') }}">
+        <i class="fas fa-user-secret"></i>&nbspLogin</a>
+</li>
+
+<li class="nav-item" id="register_navlink">
+    <a class="nav-link  double-4" href="{{ url_for('register') }}">
+        <i class="fas fa-user-secret"></i>&nbspRegister</a>
+</li>
+{% endblock %}
+
+{% block questions_leaderboard_link %}
+
+{% if password != "false" %}
+
+<li id="leaderboard_link" style="display: block;" class="nav-item">
+    <a class="nav-link" href="{{ url_for('leaderboard', password=password) }}">Leaderboard</a>
+</li>
+
+<li id="questions_link" style="display: block;"  class="nav-item btn">
+    <a class=" rbtn  double-4" href="{{ url_for('questions', password=password) }}"><i class="fas fa-sticky-note"></i>&nbspPLAY</a>
+</li>
+
+{% endif %}
+
+{% if password == "false" %}
+
+<li id="leaderboard_link" style="display: none;" class="nav-item">
+    <a class="nav-link" href="#">Leaderboard</a>
+</li>
+
+<li id="questions_link" style="display: none;"  class="nav-item btn">
+    <a class=" rbtn  double-4" href="#"><i class="fas fa-sticky-note"></i>&nbspPLAY</a>
+</li>
+
+{% endif %}
+
+{% endblock %}
+
+{% block content %}
+<header>
+    <div class="animated-title">
+        <div class="text-top">
+            <div>
+                <span>CryptX</span>
+            </div>
+        </div>
+        <div class="text-bottom">
+            <div>
+                Let the hunt begin!
+            </div>
+        </div>
+        </div>
+        <br><br>
+        <div class="countdown">
+            <ul id="countdown_ul">
+                <li class="count"><span id="days" ></span>days</li>
+                <li class="count"><span id="hours" ></span>Hours</li>
+                <li class="count"><span id="minutes" ></span>Minutes</li>
+                <li class="count" id="countdown_right"><span id="seconds" ></span>Seconds</li>
+            </ul>
+        </div>
+    </div>
+</header>
+<!-- Bootstrap.js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<!-- Countdown.js -->
+<script src="{{url_for('static', filename='js/countdown.js')}}"></script>
+
+<script>
+
+if (document.getElementById("leaderboard_link").style.display == "block"){
+    document.getElementById("questions_link").style.display = "block";
+    document.getElementById("leaderboard_link").style.display = "block";
+    document.getElementById("login_navlink").style.display = "none";
+    document.getElementById("register_navlink").style.display = "none";
+}
+
+</script>
+
+{% endblock %}

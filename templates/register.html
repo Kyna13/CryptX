@@ -1,0 +1,150 @@
+{% extends 'layout.html' %}
+{% block head %}
+    <title>CryptX - Register</title>
+    <!-- BOXICON.css -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- SCSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            background-color: #171717;
+        }
+
+        i{
+            color:white;
+            font-size: 24px;
+        }
+
+        p{
+            color:white;
+            text-align: center;
+            margin:20px;
+            font-size:25px;
+        }
+
+        .container{
+            position: relative;
+            top: 70px;
+        }
+
+        .errors{
+            position: absolute;
+            bottom: 0px;
+            font-size: 15px;
+        }
+
+        #conformation_title, #conformation_text, #conformation_button{
+            display: none;
+            text-align: left;
+            margin: 0px;
+        }
+
+        #conformation_title{
+            font-size: 90px;
+        }
+
+        #conformation_text{
+            margin-top: 20px;
+        }
+
+        #conformation_button{
+            background-color: #00fc0b;
+            color: black;
+            margin-top: 30px;
+            transition: ease-in 0.2s;
+            font-size: 20px;
+        }
+
+        #conformation_button:hover{
+            background-color: #ffffff;
+        }
+
+        @media (min-width: 570px) and (max-width: 767px) {
+            #conformation_text {
+                font-size: 20px;
+            }
+
+            #conformation_title{
+                font-size: 70px;
+            }
+        }
+
+        @media (max-width: 569px) {
+            #conformation_text, #conformation_button {
+                font-size: 15px;
+            }
+
+            #conformation_title{
+                font-size: 50px;
+            }
+        }
+    </style>
+{% endblock %}
+
+{% block questions_leaderboard_link %}
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <h1 id="conformation_title">{{ registration_complete_text[:17] }}</h1>
+    <p id="conformation_text">{{ registration_complete_text[16:-13] }}<br>{{ registration_complete_text[-13:] }}</p>
+    <a href="{{ url_for('home', password = password) }}" class="btn btn-lg btn-block btn-primary" style="width: fit-content;" id="conformation_button">{{ registration_complete_button }}</a>
+
+    <div class="log-box" id="register_box">
+        <h2 class="form-head">Registration</h2>
+        <form  method="POST">
+            {{ register_form.hidden_tag() }}
+            <div class="input">
+                {{ register_form.fullname(class="form-control", placeholder="") }}
+                <label>Full Name</label>
+            </div>
+            <div class="input">
+                {{ register_form.username(class="form-control", placeholder="") }}
+                <label>Username</label>
+            </div>
+            <div class="input">
+                {{ register_form.discordid(class="form-control", placeholder="") }}
+                <label>Discord ID</label>
+            </div>
+            <div class="input">
+                {{ register_form.email(class="form-control", placeholder="") }}
+                <label>Email Id</label>
+            </div>
+            <div class="input">
+                {{ register_form.schoolname(class="form-control", placeholder="") }}
+                <label>School Name</label>
+            </div>
+            <div class="input">
+                {{ register_form.password(class="form-control", placeholder="") }}
+                <label>Password</label>
+            </div>
+            <div class="input">
+                {{ register_form.confirm_password(class="form-control", placeholder="") }}
+                <label>Confirm Password</label>
+            </div>
+
+            {{ register_form.submit(class="btn btn-lg btn-block") }}
+        </form>
+    </div>
+</div>
+    {% for error in errors_lst %}
+        <p class="errors">{{ error }}</p>
+    {% endfor %}
+
+   <!-- Bootstrap.js -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <script>
+        if (document.getElementById("conformation_text").innerHTML != "<br>"){
+            document.getElementById("register_box").style.display = "none";
+            errors = document.getElementsByClassName("errors");
+            for (i = 0; i < errors.length; i++) {
+                errors[i].style.display = "none";
+            }
+            document.getElementById("conformation_button").style.display = "block";
+            document.getElementById("conformation_title").style.display = "block";
+            document.getElementById("conformation_text").style.display = "block";
+        }
+    </script>
+{% endblock %}
